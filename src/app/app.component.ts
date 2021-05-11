@@ -1,18 +1,24 @@
 import { Component } from '@angular/core';
+import { HomePage } from '../app/pages/home/home.page';
+import { AboutPage } from '../app/pages/about/about.page';
+import { MenuPage } from '../app/pages/menu/menu.page';
+import { ContactPage } from '../app/pages/contact/contact.page';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+
+  page: Array<{title: string, icon: string, component: any}>;
+
+  public pages = [
+    { title: 'Home', icon: 'home', link: 'home' },
+    { title: 'About Us', icon: 'information-circle', link: 'about' },
+    { title: 'Menu', icon: 'book', link:'menu' },
+    { title: 'Contact Us', icon: 'person-circle', link:'contact' }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  
   constructor() {}
 }
